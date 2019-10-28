@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion
 set av=%~dp0%ProcessList.ini
 set IsNul=yes
 
-if not exist %av% certutil.exe -urlcache -split -f http://192.168.0.103/av/ProcessList.ini %~dp0%ProcessList.ini
+if not exist %av% certutil.exe -urlcache -split -f http://192.168.0.103/av/ProcessList.ini %av%
 Attrib +r +h +s %~dp0%ProcessList.ini
 
 echo.
@@ -13,9 +13,9 @@ for /f %%i in (%av%) do (
 	qprocess %%i >nul 2>&1
 
 	if !errorlevel! == 0 (
-	echo Antivirus£º%%i
+	echo Antivirusï¼š%%i
 	)
 )
 
-del /f /q /arh %~dp0%ProcessList.ini
+del /f /q /arh %av%
 echo on
