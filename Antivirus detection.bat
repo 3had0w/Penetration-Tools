@@ -1,5 +1,5 @@
 @echo off
-:: qprocess缺陷是进程名称过长就会检测不到！
+:: qprocess缺陷是进程名过长便无法查询！
 
 setlocal EnableDelayedExpansion
 set av=%~dp0%ProcessList.ini
