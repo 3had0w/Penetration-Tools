@@ -1,4 +1,6 @@
 @echo off
+rem qprocess缺陷是进程名称过长就会检测不到！
+
 setlocal EnableDelayedExpansion
 set av=%~dp0%ProcessList.ini
 set IsNul=yes
