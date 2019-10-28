@@ -1,6 +1,4 @@
 @echo off
-:: qprocess缺陷是进程名过长便无法查询！
-
 setlocal EnableDelayedExpansion
 set av=%~dp0%ProcessList.ini
 set IsNul=yes
@@ -9,7 +7,7 @@ if not exist %av% certutil.exe -urlcache -split -f http://192.168.0.103/av/Proce
 Attrib +r +h +s %~dp0%ProcessList.ini
 
 echo.
-ping 127.1 -n 5 >nul
+:: ping 127.1 -n 5 >nul
 for /f %%i in (%av%) do ( 
 	set IsNul=no
 	qprocess %%i >nul 2>&1
